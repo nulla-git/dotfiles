@@ -1,0 +1,27 @@
+{
+    "layer": "top",
+    "height": 35, // Waybar height (to be removed for auto height)
+    "modules-left": ["river/tags"],
+    "modules-center": ["river/window"],
+    "modules-right": ["pulseaudio", "battery", "clock"],
+    "river/tags": {
+	"num-tags": 5
+    },
+    "river/window": {
+        "max-length": 50
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+	"format": "{:%I:%M %p}",
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+     "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{volume}%",
+        "format-muted": "{format_source}",
+        "on-click": "pamixer -t",
+    }
+}

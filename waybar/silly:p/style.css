@@ -2,6 +2,7 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
+    min-height: 35px;
 }
 
 window#waybar {
@@ -48,26 +49,23 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-#tags button {
-    padding: 0 10px;
+#workspaces button.active {
+    padding: 0 5px;
     background-color: transparent;
     color: #ffffff;
-}
-
-#tags button:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-
-#tags button.focused {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-#tags button.occupied {
-    background-color: #64727D;
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
 }
 
-#tags button.urgent {
+#workspaces button {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.urgent {
     background-color: #eb4d4b;
 }
 

@@ -1,0 +1,43 @@
+{
+    "layer": "top",
+    "height": 35, // Waybar height (to be removed for auto height)
+    "modules-left": ["wlr/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["pulseaudio", "battery", "clock"],
+    "hyprland/window": {
+        "max-length": 50
+    },
+    "wlr/workspaces": {
+        "format": "{icon}",
+	"on-click": "activate",
+	"persistent_workspaces": {
+	    "1": [],
+	    "2": [],
+	    "3": [],
+	    "4": [],
+	    "5": []
+	},
+	"format-icons": {
+	  "1": "1",
+	  "2": "2",
+	  "3": "3",
+	  "4": "4",
+	  "5": "5"
+    	},
+	"sort-by-number": true
+    },
+    "clock": {
+    	"format": "{:%H:%M}",
+        "format-alt": "{:%a, %b %d  %I:%M %p}"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{volume}%",
+        "format-muted": " {format_source}",
+        "on-click": "pamixer -t",
+    },
+}

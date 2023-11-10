@@ -1,43 +1,27 @@
 {
     "layer": "top",
-    "height": 35, // Waybar height (to be removed for auto height)
-    "modules-left": ["wlr/workspaces"],
-    "modules-center": ["hyprland/window"],
+    "height": 40, // Waybar height (to be removed for auto height)
+    "modules-left": ["river/tags"],
+    "modules-center": ["river/window"],
     "modules-right": ["pulseaudio", "battery", "clock"],
-    "hyprland/window": {
+    "river/tags": {
+	"num-tags": 5
+    },
+    "river/window": {
         "max-length": 50
-    },
-    "wlr/workspaces": {
-        "format": "{icon}",
-	"on-click": "activate",
-	"persistent_workspaces": {
-	    "1": [],
-	    "2": [],
-	    "3": [],
-	    "4": [],
-	    "5": []
-	},
-	"format-icons": {
-	  "1": "1",
-	  "2": "2",
-	  "3": "3",
-	  "4": "4",
-	  "5": "5"
-    	},
-	"sort-by-number": true
-    },
-    "clock": {
-    	"format": "{:%H:%M}",
-        "format-alt": "{:%a, %b %d  %I:%M %p}"
     },
     "battery": {
         "format": "{capacity}% {icon}",
         "format-icons": ["", "", "", "", ""]
     },
-    "pulseaudio": {
+    "clock": {
+	"format": "{:%H:%M}",
+        "format-alt": "{:%a, %d. %b  %I:%M}"
+    },
+     "pulseaudio": {
         "scroll-step": 5, // %, can be a float
         "format": "{volume}%",
-        "format-muted": " {format_source}",
+        "format-muted": "{format_source}",
         "on-click": "pamixer -t",
-    },
+    }
 }
